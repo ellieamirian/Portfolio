@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>List Examples</title>
+    <style>
+      #fruitBasket {
+      list-style-type: kannada;
+      }
+      #fruitBasket li {
+      color: orange;
+      }
+      #fruitBasket li:first-child {
+      color: powderblue;
+      }
+      #fruitBasket li:nth-child(3) {
+      color: powderblue;
+      }
+      #myNavBar ul {
+        background: linear-gradient(to right, powderblue,azure, pink);
+        list-style-type: none;
+        padding-inline-start: 0px;
+
+      }
+      #myNavBar ul li {
+        display: inline-block;
+        padding: 12px 24px;
+      }
+      #myNavBar ul li:hover {
+        background: linear-gradient(to right, gold,azure, gold);
+      }
+
+      #myNavBar ul li:active {
+        background: linear-gradient(to right, gold,azure, gold);
+      }
+      
+      #cta {
+        float: right;
+      }
+
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="myNavBar">
+     <ul>
+      <li><a herf="">Home</a></li>
+      <li>Gallery</li>
+      <li>About Me</li>
+      <li id="cta">Sign Up</li>
+
+     </ul>
+   </nav>
+    <ol>
+      <li>Mercury</li>
+      <li>Venus</li>
+      <li>Earth</li>
+    </ol>
+
+    <ul id="fruitBasket">
+      <li>Apples</li>
+      <li>Oranges</li>
+      <li>Kiwis</li>
+
+
+    </ul>
+  </body>
+</html>
