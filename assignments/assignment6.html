@@ -3,40 +3,118 @@
   <head>
     <title>Assignment 6</title>
     <style>
+       body {
+         background: black;
+       }
+      #firstList li {
+        color: white;
+      }
+      #firstList li a{
+        color: white;
+      }
       #secondList li:nth-child(1){
         list-style-type: "🚫  ";
         font-family: arial;
+
+      }
+      #secondList li:nth-child(1) a{
+        color: powderblue;
+        text-decoration: none;
       }
       #secondList li:nth-child(2){
         list-style-type: "❤️  ";
         font-family: Apple Chancery;
+
+      }
+      #secondList li:nth-child(2) a{
+        color: darkmagenta;
+        text-decoration: none;
       }
       #secondList li:nth-child(3){
         list-style-type: "💖 ";
         font-family: Chalkduster,fantasy;
+        color: darkorange;
+      }
+      #secondList li:nth-child(3) a{
+        color: darkorange;
+        text-decoration: none;
       }
       #secondList li:nth-child(4){
         list-style-type: "🌏  ";
         font-family:Trattatello, fantasy;
+
+      }
+      #secondList li:nth-child(4) a{
+      color: darkslateblue;
+      text-decoration: none;
+      }
+      #thirdList {
+            list-style-type: none;
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        display: inline;
+        flex-direction: column;
+        align-items: start;
+        list-style-type: none;}
+        #thirdList li {
+        padding: 6px 0;
+      }
+       #thirdList a {
+
+      --fill-color: magenta;
+      text-align: center;
+      display: block;
+      padding: 10px;
+      font: 50px Raleway, sans-serif;
+      text-transform: uppercase;
+      -webkit-text-stroke: 0.25px var(--fill-color);
+      color: transparent;
+      background-clip: text;
+      transition: 1s linear;
+      text-decoration: none;
+    }
+
+      #thirdList a:hover, thirdList a:active {
+        color: magenta;
+      }
+        background-size: 100%;
       }
 
     </style>
   </head>
   <body>
 
-     <ul>
-      <li><a herf="">Home</a></li>
-      <li><a herf="">Gallery</a></li>
-      <li><a herf="">About Me</a></li>
-      <li><a herf="">Contact</a></li>
+     <ul id="firstList">
+      <li><a href="">Home</a></li>
+      <li><a href="">Gallery</a></li>
+      <li><a href="">About Me</a></li>
+      <li><a href="">Contact</a></li>
      </ul>
 
      <ul id="secondList">
-      <li><a herf="">Home</a></li>
-      <li><a herf="">Gallery</a></li>
-      <li><a herf="">About Me</a></li>
-      <li><a herf="">Contact</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Gallery</a></li>
+      <li><a href="">About Me</a></li>
+      <li><a href="">Contact</a></li>
      </ul>
 
-  </body>
+     <ul id="thirdList">
+      <li><a href="">Home</a></li>
+      <li><a href="">Gallery</a></li>
+      <li><a href="">About Me</a></li>
+      <li><a href="">Contact</a></li>
+     </ul>
+   </body>
+
+
 </html>
