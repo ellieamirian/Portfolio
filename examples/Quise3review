@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz 3 review</title>
+  </head>
+  <style>
+    #Boxshadowexample {
+    background: radial-gradient(pink, white);
+    border: 1px solid pink;
+    /*offset-x offset-y blur-radius spread-radius*/
+    box-shadow: 10px 50px 10px 10px rgba(0,0,0,19);
+    border-radius: 5px 20px 40px 60px;
+    display: inline-block;
+    padding: 50px;
+    margin: 50px;
+    }
+
+
+  </style>
+  <body>
+    <div id=Boxshadowexample>Box Shadow Examples</div>
+  </body>
+</html>
