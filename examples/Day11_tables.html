@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang=en-US>
+  <head>
+    <title>HTML Tables Example</title>
+    <style>
+       #uglyTable, #uglyTable caption, #uglyTable th, #uglyTable td {
+         border: 1px solid hotpink;
+         border-collapse: collapse;
+         padding: 20px;
+       }
+       #uglyTable {
+         margin-bottom: 48px;
+       }
+       #uglayTableCol {
+         background-color: lavender;
+       }
+
+       #prettyTable {
+         border-collapse: collapse;
+       }
+       #prettyTable th {
+         padding-bottom: 12px;
+         padding-right: 24px;
+       }
+       #prettyTable td {
+         padding: 4px 0px;
+       }
+       #prettyTable tr:nth-child(even) {
+         background-color: lightpink;
+       }
+        #prettyTable tr:hover {
+          background-color: lightcyan;
+        }
+        #john {
+          background-color: gold;
+          font-weight: bold;
+        }
+    </style>
+  </head>
+  <body>
+    <table id="uglyTable">
+      <caption>This is an ugly table.</caption>
+      <colgroup>
+        <col id="uglayTableCol" span="2">
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>First Naeme</th>
+          <th>Last Name</th>
+          <th>Favorite Animal</th>
+          <th>Favorite food</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>Dog</td>
+          <td>Fettuccine</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>Doe</td>
+          <td>Panter</td>
+          <td>Steak</td>
+        </tr>
+        <tr>
+          <td>Victor</td>
+          <td>Van Dort</td>
+          <td>PButterfly</td>
+          <td>Fish</td>
+        </tr>
+        <tr>
+          <td>Victoria</td>
+          <td>Everglot</td>
+          <td>Otter</td>
+          <td>Soup</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table id="prettyTable">
+      <thead>
+        <tr>
+          <th>First Naeme</th>
+          <th>Last Name</th>
+          <th>Favorite Animal</th>
+          <th>Favorite food</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="john">John</td>
+          <td>Smith</td>
+          <td>Dog</td>
+          <td>Fettuccine</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>Doe</td>
+          <td>Panter</td>
+          <td>Steak</td>
+        </tr>
+        <tr>
+          <td>Victor</td>
+          <td>Van Dort</td>
+          <td>PButterfly</td>
+          <td>Fish</td>
+        </tr>
+        <tr>
+          <td>Victoria</td>
+          <td>Everglot</td>
+          <td>Otter</td>
+          <td>Soup</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
