@@ -1,0 +1,120 @@
+
+<html lang=en-US>
+
+   <head>
+      <title>Headings Examples</title>
+   <style>
+     body {
+       background-image: url("9.jpg");
+       background-size: cover;
+       margin: 200px;
+     }
+
+     h1 {
+       color: dimgray;
+       font-family: Jazz LET, fantasy;
+       font-size: 75px;
+       margin-bottom:0;
+       text-shadow:2px 5px slateblue, 5px 2px lavender ;
+       transform:rotate(-3deg);
+      }
+
+     table {
+       table-layout: fix;
+       border-collapse: separate;
+       border-spacing: 2 25px;
+       text-align: center;
+       font-family: arial;
+      }
+
+       th, td {
+         font-size: 20px;
+         padding: 25px;
+      }
+
+       td {
+         background-color: lavender;
+         color: dimgray;
+         font-weight: bold;
+       }
+
+       th {
+         font-weight: bold;
+         background-color: slateblue;
+         color: lavender;
+        }
+
+       table td:hover{
+        background-color: plum;
+       }
+
+       tbody tr:nth-child(odd) {
+         transform:rotate(3deg);
+       }
+
+       thead tr,
+       tbody tr:nth-child(even) {
+         transform:rotate(-2deg);
+       }
+
+
+
+</style>
+</head>
+
+<body>
+<h1>Top Projects</h1>
+
+<table class="zigzag">
+  <thead>
+    <tr>
+      <th class="header">Projects</th>
+      <th class="header">Criteria 1</th>
+      <th class="header">Criteria 2</th>
+      <th class="header">Criteria 3</th>
+    </tr>
+  </thead>
+
+  <tbody class="this">
+    <tr>
+      <td>Project A</td>
+      <td>&#9829;</td>
+      <td>&#10004;</td>
+      <td>&#189;</td>
+    </tr>
+
+    <tr>
+      <td>Project B</td>
+      <td>&#9824;</td>
+      <td>&#10004;</td>
+      <td>&#190;</td>
+    </tr>
+    <tr>
+      <td>Project C</td>
+      <td>&#9830;</td>
+      <td>&#10004;</td>
+      <td>&#8531;</td>
+    </tr>
+    <tr>
+      <td>Project D</td>
+      <td>&#9724;</td>
+      <td>&#10004;</td>
+      <td>&#8532;</td>
+    </tr>
+    <tr>
+      <td>Project E</td>
+      <td>&#9711;</td>
+      <td>&#10008;</td>
+      <td>&#8539;</td>
+    </tr>
+    <tr>
+      <td>Project F</td>
+      <td>&#9651;</td>
+      <td>&#10008;</td>
+      <td>&#8540;</td>
+    </tr>
+
+  </tbody>
+</table>
+</body>
+</html>
