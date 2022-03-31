@@ -16,13 +16,17 @@
   body{
     margin: 0;
   }
-  .section-center{
+  .sectionCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .sectionCenter img {
     position: absolute;
     top: 50%;
-    display: block;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%);
+    width: 75%;
+    height: auto;
   }
 
 
@@ -240,7 +244,26 @@
   .menu-icon:checked ~ .nav ul li:nth-child(4){
     transition-delay: 1640ms;
   }
- .pt-5
+ @media screen and (max-width: 480px) {
+   .sectionCenter img {
+     width: 75%;
+   }
+   .nav {
+     width: 50px;
+     height: 50px;
+     top: 45px;
+     right: 45px;
+   }
+   .menu-icon:checked + label,
+   .menu-icon:not(:checked) + label{
+     position: fixed;
+     top: 60px;
+     right: 55px;
+    }
+    .nav ul li a{
+      font-size: 5vh;
+    }
+ }
 
 
 
@@ -259,9 +282,8 @@
     		</ul>
     	</nav>
 
-    	<figure class="section-center">
+    	<figure class="sectionCenter">
         <img
-          style="height: 150px"
           src="logo.png"
         />
     	</figure>
