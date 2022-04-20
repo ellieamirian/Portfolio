@@ -1,17 +1,16 @@
 <html lang=en-US>
   <head>
     <title>MY PORTFOLIO</title>
-  </head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <style>
   body{
     background-color: rgba(50,50,50,10);
-    background-image: url('me.JPG');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%, 100%;
-    height: 50% 100%;
-    width: 100%;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
 
 
@@ -189,7 +188,6 @@
     text-decoration: none;
     font-family: Raleway, sans-serif;
     -webkit-text-stroke: 0px var(--fill-color);
-    text-decoration: none;
     color: #E82016;
   }
   .nav ul li a:after{
@@ -229,11 +227,178 @@
   .menu-icon:checked ~ .nav ul li:nth-child(4){
     transition-delay: 1640ms;
   }
- .pt-5
 
+
+
+  * {
+    box-sizing: border-box;
+  }
+  h1 {
+    margin-top: 200px;
+    text-align: center;
+    --fill-color: #6B0BD9;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    -webkit-text-stroke: 2px var(--fill-color);
+    color: rgba(50,50,50,10);
+    font-size: 50px;
+    padding: 10px;
+  }
+  img {
+    width: 75%;
+  }
+  p {
+    color: white;
+    padding: 50px 200px 0px 200px;
+    font-size: 18px;
+    font-family: Raleway, sans-serif;
+    color: black;
+    text-align: center;
+
+  }
+  .popupTrigger {
+    --fill-color:  #E82016;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    -webkit-text-stroke: 1px var(--fill-color);
+    color: rgba(50,50,50,10);
+    font-size: 20px;
+    line-height: 2;
+    padding: 20px;
+    margin-top: 50px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: cell;
+    background-color: rgba(50,50,50,10);
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,1);
+    text-align: center;
+    transition: 0.6s ease;
+  }
+  .popupTrigger:hover {
+    box-shadow: none;
+  }
+  @keyframes colorchange {
+    to {filter: hue-rotate(180deg);}
+  }
+  #popupContainer {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  #popupContainer.popupOpen {
+    display: flex;
+  }
+  #popupBackground {
+    background-color: rgba(50,50,50,10);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+
+  }
+
+  #popup {
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    padding: 36px;
+    background-color: rgba(50,50,50,10);
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,1);
+    min-width: 400px;
+    text-align: center;
+  }
+
+  #popup .closePopup {
+    margin-top: 50px;
+  }
+  #popup .closePopup:after {
+    content: ' \274C';
+ }
+ .closePopup {
+   cursor: cell;
+ }
+ .inputs input {
+   display: block;
+   width: 100%;
+   padding: 5px;
+   border: none;
+   outline: none;
+   box-sizing: border-box;
+   background: #ecf0f3;
+   padding: 10px;
+   padding-left: 20px;
+   height: 50px;
+   font-size: 14px;
+   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+ }
+
+
+ .inputs label {
+   color: #6B0BD9;
+   float: left;
+   padding: 10px;
+   font-size: 14px;
+ }
+
+ #button input {
+   background-color: rgba(50,50,50,10);
+   box-shadow: 0 8px 30px 0 rgba(0,0,0,1);
+   border: 0;
+   --fill-color:  #E82016;
+   text-decoration: none;
+   font-family: Raleway, sans-serif;
+   -webkit-text-stroke: 1px var(--fill-color);
+   color: rgba(50,50,50,10);
+   font-size: 20px;
+   margin-top: 20px;
+   height: 40px;
+   cursor: pointer;
+   transition: 0.5s;
+   padding: 25px 150px 40px 150px;
+   text-align: center;
+ }
+ #button input:hover {
+   box-shadow: none;
+ }
+ #message {
+   padding: 100px;
+ }
+@media screen and (min-width: 480px) and (max-width: 799px) {
+  p {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  p {
+    padding: 20px;
+  }
+  #popup {
+    min-width: 300px;
+  }
+  #button input {
+    padding: 25px 100px 40px 100px;
+  }
+  .popupTrigger {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
 
 
   </style>
+</head>
   <body>
 
     	<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
@@ -243,11 +408,63 @@
     			<li><a href="index.html">Home</a></li>
     			<li><a href="Gallery.html">Gallery</a></li>
     			<li><a href="About.html">About</a></li>
-    			<li><a href="Contact.html">Contact</a></li>
     		</ul>
     	</nav>
 
+      <h1>Graphic Designer</h1>
+      <img
+        src="logo.png"
+      />
+      <p>
+        My name is Maryam Amirian, an Orlando-based artist. My passion for art developed
+        in my early childhood from my father drawing different cars with chalk on asphalt
+        and reading poems for me. I’ve been learning and studying art since I was seven,
+        starting with drawing, painting, and calligraphy and after that, I went to college for
+        traditional art and studied a wide variety of art including photography, sculpture,
+        typography, rugs, batik, and jewelry design. After my master degree, I started
+        working in the jewelry design field for over a decade. Right now, I am in school for
+        graphic and web design because I was missing the digital aspect of art. All of that
+        made me creative and detail-oriented. I think that shows how much I love art but I
+        also love traveling and trying new foods and meeting new people.
+      </p>
+      <div class="popupTrigger">Contact Me</div>
 
+      <div id="popupContainer">
+        <div id="popupBackground" class="closePopup"></div>
+        <div id="popup">
+          <div class="inputs">
+              <label>FULL NAME</label>
+              <input type="text" />
+              <label>EMAIL</label>
+              <input type="text"/>
+              <label>PHONE NUMBER</label>
+              <input type="text"/>
+              <label>MESSAGE</label>
+              <input  id="message" type="text"/>
+          </div>
+
+          <div id="button">
+                 <input type="submit" value="Submit">
+          </div>
+          <div class="closePopup"></div>
+        </div>
+
+      </div>
+
+      <script type="text/javascript">
+         $('.popupTrigger').click(
+           function() {
+           $('#popupContainer').addClass('popupOpen');
+         }
+       );
+
+       $('.closePopup').click(
+       function() {
+         $('#popupContainer').removeClass('popupOpen');
+       }
+      );
+
+      </script>
 
 
   </body>
