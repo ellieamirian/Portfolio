@@ -1,6 +1,6 @@
 <html lang=en-US>
   <head>
-    <title>MY PORTFOLIO</title>
+    <title>About Me</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <style>
@@ -233,8 +233,9 @@
   * {
     box-sizing: border-box;
   }
-  h1 {
+  header {
     margin-top: 200px;
+    margin-bottom: 50px;
     text-align: center;
     --fill-color: #6B0BD9;
     text-decoration: none;
@@ -247,7 +248,7 @@
   img {
     width: 75%;
   }
-  p {
+  section {
     color: white;
     padding: 50px 200px 0px 200px;
     font-size: 18px;
@@ -376,12 +377,12 @@
    padding: 100px;
  }
 @media screen and (min-width: 480px) and (max-width: 799px) {
-  p {
+  section {
     padding: 30px;
   }
 }
 @media screen and (max-width: 480px) {
-  p {
+  section {
     padding: 20px;
   }
   #popup {
@@ -411,11 +412,12 @@
     		</ul>
     	</nav>
 
-      <h1>Graphic Designer</h1>
+      <header>Graphic Designer</header>
       <img
         src="logo.png"
+        alt="Maryam Amirian Logo"
       />
-      <p>
+      <section>
         My name is Maryam Amirian, an Orlando-based artist. My passion for art developed
         in my early childhood from my father drawing different cars with chalk on asphalt
         and reading poems for me. I’ve been learning and studying art since I was seven,
@@ -426,7 +428,7 @@
         graphic and web design because I was missing the digital aspect of art. All of that
         made me creative and detail-oriented. I think that shows how much I love art but I
         also love traveling and trying new foods and meeting new people.
-      </p>
+      </section>
       <div class="popupTrigger">Contact Me</div>
 
       <div id="popupContainer">
