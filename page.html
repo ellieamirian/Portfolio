@@ -1,0 +1,464 @@
+<html lang=en-US>
+  <head>
+    <title>About Me</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <style>
+  body{
+    background-color: rgba(50,50,50,10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  [type="checkbox"]:checked,
+  [type="checkbox"]:not(:checked){
+    position: absolute;
+    left: -9999px;
+  }
+  .menu-icon:checked + label,
+  .menu-icon:not(:checked) + label{
+    position: fixed;
+    top: 63px;
+    right: 75px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .menu-icon:checked + label:before,
+  .menu-icon:not(:checked) + label:before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 30px;
+    height: 20px;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    border-top: 2px solid #FF0A1A;
+    border-bottom: 2px solid #FF0A1A;
+    transition: border-width 100ms 1500ms ease,
+                top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+                height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+                background-color 200ms ease,
+                transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu-icon:checked + label:after,
+  .menu-icon:not(:checked) + label:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 22px;
+    height: 2px;
+    z-index: 20;
+    top: 10px;
+    right: 4px;
+    background-color: #6B0BD9;
+    margin-top: -1px;
+    transition: width 100ms 1750ms ease,
+                right 100ms 1750ms ease,
+                margin-top 100ms ease,
+                transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu-icon:checked + label:before{
+    top: 10px;
+    transform: rotate(45deg);
+    height: 2px;
+    background-color: #FF0A1A;
+    border-width: 0;
+    transition: border-width 100ms 340ms ease,
+                top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+                height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+                background-color 200ms 500ms ease,
+                transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu-icon:checked + label:after{
+    background-color: #6B0BD9;
+    width: 30px;
+    margin-top: 0;
+    right: 0;
+    transform: rotate(-45deg);
+    transition: width 100ms ease,
+                right 100ms ease,
+                margin-top 100ms 500ms ease,
+                transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .nav{
+    position: fixed;
+    top: 33px;
+    right: 50px;
+    display: block;
+    width: 80px;
+    height: 80px;
+    padding: 0;
+    margin: 0;
+    z-index: 9;
+    overflow: hidden;
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,1);
+    background-color: rgba(50,50,50,100);
+    animation: blob-left-top-anim cubic-bezier(0.770, 0.000, 0.175, 1.000) 4s infinite;blob-left-top-anim cubic-bezier(0.770, 0.000, 0.175, 1.000) 4s infinite;;
+    transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+                right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+                transform 250ms 1100ms ease,
+                width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
+                height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  @keyframes border-transform{
+      0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+    14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; }
+    28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; }
+    42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; }
+    56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; }
+    70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; }
+    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; }
+  }
+
+  .menu-icon:checked ~ .nav {
+    animation-play-state: paused;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 200%;
+    height: 200%;
+    transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+                right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+                transform 250ms 700ms ease,
+                width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
+                height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .nav ul{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 6;
+    text-align: center;
+    transform: translateY(-50%);
+    list-style: none;
+  }
+  .nav ul li{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+    list-style: none;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: all 250ms linear;
+  }
+  .nav ul li:nth-child(1){
+    transition-delay: 200ms;
+  }
+  .nav ul li:nth-child(2){
+    transition-delay: 150ms;
+  }
+  .nav ul li:nth-child(3){
+    transition-delay: 100ms;
+  }
+  .nav ul li:nth-child(4){
+    transition-delay: 50ms;
+  }
+  .nav ul li a{
+    --fill-color: #6B0BD9;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    -webkit-text-stroke: 2px var(--fill-color);
+    font-size: 10vh;
+    font-weight: 800;
+    color: #323233;
+  }
+  .nav ul li a:hover{
+    --fill-color: #6B0BD9;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    -webkit-text-stroke: 0px var(--fill-color);
+    color: #E82016;
+  }
+  .nav ul li a:after{
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    height: 2vh;
+    margin-top: -1vh;
+    width: 0;
+    left: 0;
+    background-color: #353746;
+    opacity: 0.08;
+    transition: width 250ms linear;
+  }
+  .nav ul li a:hover:after{
+    width: 100%;
+  }
+
+
+  .menu-icon:checked ~ .nav  ul li {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 350ms ease,
+                transform 250ms ease;
+  }
+  .menu-icon:checked ~ .nav ul li:nth-child(1){
+    transition-delay: 1400ms;
+  }
+  .menu-icon:checked ~ .nav ul li:nth-child(2){
+    transition-delay: 1480ms;
+  }
+  .menu-icon:checked ~ .nav ul li:nth-child(3){
+    transition-delay: 1560ms;
+  }
+  .menu-icon:checked ~ .nav ul li:nth-child(4){
+    transition-delay: 1640ms;
+  }
+
+
+
+  * {
+    box-sizing: border-box;
+  }
+  header {
+    margin-top: 200px;
+    margin-bottom: 50px;
+    text-align: center;
+    --fill-color: #6B0BD9;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    -webkit-text-stroke: 2px var(--fill-color);
+    color: rgba(50,50,50,10);
+    font-size: 50px;
+    padding: 10px;
+  }
+  img {
+    width: 75%;
+  }
+  section {
+    color: white;
+    padding: 50px 200px 0px 200px;
+    font-size: 18px;
+    font-family: Raleway, sans-serif;
+    color: black;
+    text-align: center;
+
+  }
+  .popupTrigger {
+    --fill-color:  #E82016;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    -webkit-text-stroke: 1px var(--fill-color);
+    color: rgba(50,50,50,10);
+    font-size: 20px;
+    line-height: 2;
+    padding: 20px;
+    margin-top: 50px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: cell;
+    background-color: rgba(50,50,50,10);
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,1);
+    text-align: center;
+    transition: 0.6s ease;
+  }
+  .popupTrigger:hover {
+    box-shadow: none;
+  }
+  @keyframes colorchange {
+    to {filter: hue-rotate(180deg);}
+  }
+  #popupContainer {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  #popupContainer.popupOpen {
+    display: flex;
+  }
+  #popupBackground {
+    background-color: rgba(50,50,50,10);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+
+  }
+
+  #popup {
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    padding: 36px;
+    background-color: rgba(50,50,50,10);
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,1);
+    min-width: 400px;
+    text-align: center;
+  }
+
+  #popup .closePopup {
+    margin-top: 50px;
+  }
+  #popup .closePopup:after {
+    content: ' \274C';
+ }
+ .closePopup {
+   cursor: cell;
+ }
+ .inputs input {
+   display: block;
+   width: 100%;
+   padding: 5px;
+   border: none;
+   outline: none;
+   box-sizing: border-box;
+   background: #ecf0f3;
+   padding: 10px;
+   padding-left: 20px;
+   height: 50px;
+   font-size: 14px;
+   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+ }
+
+
+ .inputs label {
+   color: #6B0BD9;
+   float: left;
+   padding: 10px;
+   font-size: 14px;
+ }
+
+ #button input {
+   background-color: rgba(50,50,50,10);
+   box-shadow: 0 8px 30px 0 rgba(0,0,0,1);
+   border: 0;
+   --fill-color:  #E82016;
+   text-decoration: none;
+   font-family: Raleway, sans-serif;
+   -webkit-text-stroke: 1px var(--fill-color);
+   color: rgba(50,50,50,10);
+   font-size: 20px;
+   margin-top: 20px;
+   height: 40px;
+   cursor: pointer;
+   transition: 0.5s;
+   padding: 25px 150px 40px 150px;
+   text-align: center;
+ }
+ #button input:hover {
+   box-shadow: none;
+ }
+ #message {
+   padding: 100px;
+ }
+@media screen and (min-width: 480px) and (max-width: 799px) {
+  section {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  section {
+    padding: 20px;
+  }
+  #popup {
+    min-width: 300px;
+  }
+  #button input {
+    padding: 25px 100px 40px 100px;
+  }
+  .popupTrigger {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+
+  </style>
+</head>
+  <body>
+
+    	<input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
+    	<label for="menu-icon"></label>
+    	<nav class="nav">
+    		<ul class="pt-5">
+    			<li><a href="index.html">Home</a></li>
+    			<li><a href="Gallery.html">Gallery</a></li>
+    			<li><a href="About.html">About</a></li>
+    		</ul>
+    	</nav>
+
+      <header>Graphic Designer</header>
+      <img
+        src="logo.png"
+        alt="Maryam Amirian Logo"
+      />
+      <section>
+        Placeholder content
+      </section>
+      <div class="popupTrigger">Contact Me</div>
+
+      <div id="popupContainer">
+        <div id="popupBackground" class="closePopup"></div>
+        <div id="popup">
+          <div class="inputs">
+              <label>FULL NAME</label>
+              <input type="text" />
+              <label>EMAIL</label>
+              <input type="text"/>
+              <label>PHONE NUMBER</label>
+              <input type="text"/>
+              <label>MESSAGE</label>
+              <input  id="message" type="text"/>
+          </div>
+
+          <div id="button">
+                 <input type="submit" value="Submit">
+          </div>
+          <div class="closePopup"></div>
+        </div>
+
+      </div>
+
+      <script type="text/javascript">
+         $('.popupTrigger').click(
+           function() {
+           $('#popupContainer').addClass('popupOpen');
+         }
+       );
+
+       $('.closePopup').click(
+       function() {
+         $('#popupContainer').removeClass('popupOpen');
+       }
+      );
+
+      </script>
+
+
+  </body>
+</html>
