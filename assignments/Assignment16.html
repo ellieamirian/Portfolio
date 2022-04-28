@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang=en-US>
+  <head>
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url('https://images.unsplash.com/photo-1626908013351-800ddd734b8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+      }
+      h1 {
+        margin-top: 100px;
+        text-align: center;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: 100px;
+        filter: blur(5px);
+      }
+      .popupTrigger {
+        position: relative;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px;
+        line-height: 2;
+        padding: 20px;
+        margin: auto;
+        margin-top: 100px;
+        border-radius: 50px;
+        width: 450px;
+        letter-spacing: 1px;
+        border: none;
+        cursor: cell;
+        background-color: crimson;
+        color: black;
+        text-align: center;
+        transition: 0.6s ease;
+      }
+      .popupTrigger:hover {
+        background-color: rgba(255,54,0,0.5);
+        animation: colorchange 3s linear infinite;
+      }
+      @keyframes colorchange {
+      	to {filter: hue-rotate(180deg);}
+      }
+      #popupContainer {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #popupContainer.popupOpen {
+        display: flex;
+      }
+      #popupBackground {
+        background: rgba(0, 0, 0, 0.7);
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Tom_Waits_%281973_Asylum_publicity_photo_-_with_cigarette%29.jpg/220px-Tom_Waits_%281973_Asylum_publicity_photo_-_with_cigarette%29.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+      }
+      p {
+        text-align: left;
+      }
+      #popup {
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        border-radius: 24px;
+        padding: 36px;
+        background:rgba(255,255,255, 0.7);
+        min-width: 400px;
+        text-align: center;
+      }
+      #popup .closePopup {
+        margin-top: 50px;
+      }
+      .closePopup:after {
+        content: ' \274C';
+     }
+     .closePopup {
+       cursor: cell;
+     }
+
+    </style>
+  </head>
+  <body>
+
+     <h1>POEMS</h1>
+
+     <div class="popupTrigger">click here to read a POEM!</div>
+
+     <div id="popupContainer">
+       <div id="popupBackground" class="closePopup"></div>
+       <div id="popup">
+         <div>
+          <h2>
+            Little Drop Of Poison
+          </h2>
+          <h3>
+            Tom Waits
+          </h3>
+           <p>I like my town with a little drop of poison<br>
+                  Nobody knows, they're lining up to go insane<br>
+                  I'm all alone, I smoke my friends down to the filter<br>
+                  But I feel much cleaner after it rains<br>
+                  And she left in the fall, that's her picture on the wall<br>
+                  She always had that little drop of poison<br>
+                  Did the Devil make the world while God was sleeping<br>
+                  You'll never get a wish from a bone<br>
+                  Another wrong goodbye and a hundred sailors<br>
+                  That deep blue sky is my home<br>
+                  And she left in the fall, that's her picture on the wall<br>
+                  She always had that little drop of poison<br>
+                  A rat always knows when he's in with weasels<br>
+                  Here you lose a little every day<br>
+                  Well, I remember when a million was a million<br>
+                  They all have ways to make you pay<br>
+                  And she left in the fall, that's her picture on the wall<br>
+                  She always had that little drop of poison<br>
+                  And she left in the fall, that's her picture on the wall<br>
+                  She always had that little drop of poison<br>
+              </p>
+            </div>
+         <div class="closePopup"></div>
+       </div>
+
+     </div>
+
+     <script type="text/javascript">
+        $('.popupTrigger').click(
+          function() {
+          $('#popupContainer').addClass('popupOpen');
+        }
+      );
+
+      $('.closePopup').click(
+      function() {
+        $('#popupContainer').removeClass('popupOpen');
+      }
+    );
+
+     </script>
+  </body>
+</html>

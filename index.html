@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
   	background-color: rgba(50,50,50,10);
     background-position: center;
-    background-size: 100%, 100%;
+    background-size: auto, 100%;
     height: 100%;
     width: 100%;
     background-image: url('back.png'), url('me.JPG');
@@ -16,13 +16,18 @@
   body{
     margin: 0;
   }
-  .section-center{
+  .sectionCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+  }
+  .sectionCenter img {
     position: absolute;
     top: 50%;
-    display: block;
-    width: 100%;
-    text-align: center;
-    transform: translateY(-50%);
+    width: 75%;
+    height: auto;
   }
 
 
@@ -164,8 +169,6 @@
     position: relative;
     display: block;
     width: 100%;
-    padding: 0;
-    margin: 10px 0;
     text-align: center;
     list-style: none;
     pointer-events: none;
@@ -240,7 +243,23 @@
   .menu-icon:checked ~ .nav ul li:nth-child(4){
     transition-delay: 1640ms;
   }
- .pt-5
+ @media screen and (max-width: 480px) {
+   .sectionCenter img {
+     display: none;
+   }
+
+
+    .nav ul li a {
+      font-size: 5vh;
+    }
+
+    main {
+    background-size: auto, 50%;
+    background-position: 50%;
+    background-image: url('12/mediaBack.png');
+
+    }
+ }
 
 
 
@@ -255,13 +274,11 @@
     			<li><a href="index.html">Home</a></li>
     			<li><a href="Gallery.html">Gallery</a></li>
     			<li><a href="About.html">About</a></li>
-    			<li><a href="Contact.html">Contact</a></li>
     		</ul>
     	</nav>
 
-    	<figure class="section-center">
+    	<figure class="sectionCenter">
         <img
-          style="height: 150px"
           src="logo.png"
         />
     	</figure>

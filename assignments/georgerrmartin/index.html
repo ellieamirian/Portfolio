@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang=en-US>
+  <head>
+    <title>George R.R. Martin | Website of author George R.R. Martin</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Montaga&family=Rubik+Microbe&display=swap');
+		   body {
+         background-image: url(https://images.unsplash.com/photo-1617801003287-1a71d7792fdc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80);
+         background-repeat: no-repeat;
+         background-size: cover;
+		   }
+       .white {
+         color: white;
+       }
+       .yellow {
+         color: #DBBF73;
+       }
+       header {
+         display: flex;
+         flex-direction: row;
+         grid-area: header;
+       }
+       header img {
+         margin: 100px 0px 0px 15px;
+       }
+       #shield {
+         background-image: url(https://georgerrmartin.com/wp-content/themes/GRRM/images/h-lannister-new.gif);
+         backgroun-position: left top;
+         height:75px;
+         width: 65px;
+         margin: 80px 0px 0px 27px;
+       }
+       h1 {
+         font-size: 60px;
+         margin: 80px 0px 0px 27px;
+       }
+       h1,
+       h2,
+       h3 {
+         font-family: 'Montaga';
+       }
+       h3 a {
+         text-decoration: none;
+         list-style-type: none;
+         color: navy;
+       }
+       nav {
+         grid-area: nav;
+       }
+       nav ul {
+         list-style-type: none;
+         display: flex;
+         flex-direction: row;
+         padding: 0;
+         width: 900px;
+       }
+       nav ul li {
+         flex: 1;
+         font-family: 'Montaga', serif;
+         text-align: center;
+       }
+       nav ul li:hover {
+         background: linear-gradient(to right, gray, white, gray);
+       }
+       nav ul li a {
+         text-decoration: none;
+         color: black;
+       }
+       #banner {
+         background-image: url(https://georgerrmartin.com/wp-content/uploads/2020/10/GRRM-callout-dealer.jpg);
+         background-position: center;
+         background-clip: padding-box;
+         border: 8px ridge gray;
+         box-sizing: border-box;
+         height: 300px;
+         width: 958px;
+         grid-area: banner;
+       }
+       #cards {
+         display: flex;
+         flex-direction: row;
+         grid-area: cards;
+       }
+       #cards img {
+         border: 8px ridge gray;
+         box-sizing: border-box;
+         margin: 10px 11px 0px 0px;
+         padding: 0;
+         felx: 1;
+         width: 312px;
+       }
+       aside, aside img {
+         grid-area: sidenav;
+       }
+       #nextAppearance {
+         background-image: url(https://www.georgerrmartin.com/theme/events-bg.jpg);
+         background-position: right bottom;
+         background-repeat: no-repeat;
+         border: 8px ridge gray;
+         box-sizing: border-box;
+         height: 160px;
+         margin: 10px 0px 0px 0px;
+         width: 311px;
+       }
+       #nextAppearance h3, #nextPublication p, #nextPublication h3 {
+        color: white;
+       }
+       #nextPublication {
+         background-image: url(https://www.georgerrmartin.com/theme/releases-bg.jpg);
+         background-position: right bottom;
+         background-repeat: no-repeat;
+         border: 8px ridge gray;
+         box-sizing: border-box;
+         height: 246px;
+         margin: 20px 0px 0px 0px;
+         width: 311px;
+       }
+        #collectibleProp, #stageCoach {
+         margin: 20px 0px 0px 0px;
+        }
+       #collectibleProp img, #stageCoach img {
+         border: 8px ridge gray;
+         width: 295px;
+         height: auto;
+       }
+       main {
+        background: rgba(76, 175, 211, 0.1);
+        grid-area: blog;
+        border: 8px ridge gray;
+        margin: 10px 40px 5px 0px;
+        padding: 15px;
+       }
+       main p {
+         font-family: Verdana, Geneva, sans-serif;
+         font-size: 12px;
+       }
+       footer {
+         border: 8px ridge gray;
+         grid-area: footer;
+         text-align: center;
+         margin: 5px 40px 0px 0;
+         font-size: 20px;
+         border-width: 2ex 1.25ex 0.5ex;
+         padding: 20px 0px 20px 0px;
+       }
+       #grid {
+         display: grid;
+  			 grid-template-columns: 1fr 333px 334px 333px 1fr;
+  			 grid-auto-rows: minmax(50px, auto);
+  			 grid-template-areas:
+  			 ". header header header ."
+  			 ". nav     nav     nav ."
+  			 ". banner  banner  banner ."
+  			 ". cards   cards   cards ."
+  			 ". sidenav blog    blog ."
+  			 ". footer  footer  footer ."
+  			 ". bottom  bottom  bottom .";
+  		   }
+			 @media screen and (max-width: 1000px) {
+				 #grid {
+				 grid-template-columns: 1fr;
+				 grid-template-areas:
+				 "header"
+				 "nav"
+				 "banner"
+				 "cards"
+				 "blog"
+         "sidenav"
+				 "footer"
+				 "bottom";
+			   }
+         header {
+           flex-direction: column;
+           text-align: center;
+           margin: 10px;
+         }
+         header img {
+           margin: 2px;
+           text-align: center;
+         }
+         h1 {
+           font-size: 30px;
+           margin: 10px;
+         }
+         #shield {
+           background-repeat: no-repeat;
+           background-size: contain;
+           background-position: center;
+           width: auto;
+           margin-top: 15px;
+         }
+         nav ul {
+           flex-direction: column;
+           width: auto;
+         }
+          #banner {
+           background-repeat: no-repeat;
+           background-size: contain;
+           background-position: center;
+           border: none;
+           width: auto;
+         }
+         #cards {
+            flex-direction: column;
+         }
+         main {
+          border: none;
+          background: none;
+         }
+         footer {
+           font-size: 10px;
+         }
+			 }
+    </style>
+	</head>
+<body>
+	 <div id="grid">
+				<header>
+          <div id="shield"></div>
+          <h1>GEORGE R.R. MARTIN</h1>
+          <a href="#">
+            <img src="https://georgerrmartin.com/wp-content/themes/GRRM/images/facebook-overall.jpg" alt="facebook">
+          </a>
+          <a href="#">
+            <img src="https://georgerrmartin.com/wp-content/themes/GRRM/images/twitter-overall.jpg" alt="app">
+          </a>
+          <a href="#">
+            <img src="https://www.georgerrmartin.com/theme/app-overall.jpg" alt="">
+          </a>
+        </header>
+
+				<nav>
+          <ul>
+             <li><a href="#">HOME</a></li>
+             <li><a href="#">NOT A BLOG</a></li>
+             <li><a href="#">ABOUT GEORGE</a></li>
+             <li><a href="#">BOOKS</a></li>
+             <li><a href="#">FOR FANS</a></li>
+             <li><a href="#">NEWS</a></li>
+             <li><a href="#">ERCHANDISE</a></li>
+          </ul>
+        </nav>
+
+
+				<div id="banner"></div>
+
+				<div id="cards">
+            <img
+              src="https://georgerrmartin.com/wp-content/uploads/2016/09/GRRM-SMALL-cocteau3.jpg"
+            />
+            <img
+              src="https://georgerrmartin.com/wp-content/uploads/2019/02/newsletter-home.png"
+            />
+            <img
+              src="https://georgerrmartin.com/wp-content/themes/GRRM/images/callout-sample-3.jpg"
+            />
+        </div>
+
+				<aside>
+            <div id="nextAppearance">
+               <h3>Next Appearance</h3>
+               <div class="yellow">September 1-5 2022</div>
+                <div class="white">2022 Worldcon in Chicago, Chicon 8</div>
+                <img
+                  src="https://georgerrmartin.com/wp-content/themes/GRRM/images/more-appearances.jpg"
+                />
+            </div>
+            <div id="nextPublication">
+               <h3>Next Publication</h3>
+                <p class="white">
+                  Check back soon for information on future releases.
+                </p>
+                <img
+                  src="https://georgerrmartin.com/wp-content/themes/GRRM/images/view-pubs.png"
+                />
+            </div>
+
+            <div id="collectibleProp">
+              <img
+                src="https://georgerrmartin.com/wp-content/themes/GRRM/images/valyrian-steel-v3.jpg?v=3"
+              />
+            </div>
+            <div id="stageCoach">
+              <img
+                src="https://georgerrmartin.com/wp-content/themes/GRRM/images/stagecoach-v2.jpg?v=3"
+              />
+            </div>
+        </aside>
+
+				<main>
+           <h2>Current GRM Blog Post</h1>
+            <h3> <a href="#">The Dragons Are Coming</a></h3>
+            <p>
+               … they’re on the wing, and will be arriving in August.
+               Details here: https://variety.com/2022/tv/news/game-of-thrones-house-of-the-dragon-premiere-date-1235215983/
+               <a href="https://georgerrmartin.com/notablog/2022/03/30/the-dragons-are-coming-2/">Read more »</a>
+            </p>
+
+             <h3> <a href="#">THE RISE OF THE DRAGON</a></h3>
+             <p>
+                We’re so excited to announce The Rise of The Dragon, a lavish visual history of House Targaryen –
+                the iconic family at the heart of HBO’s Game of Thrones prequel series, House of the Dragon –
+                featuring over 180 all-new…
+                 https://variety.com/2022/tv/news/game-of-thrones-house-of-the-dragon-premiere-date-1235215983/
+                <a href="https://georgerrmartin.com/notablog/2022/03/30/the-dragons-are-coming-2/">Read more »</a>
+             </p>
+
+             <h3> <a href="#">Dealer Takes Two</a></h3>
+             <p>
+                Kings and deuces may not be as iconic… or ominous… a poker hand as aces and eights, but it’s not
+                 a bad hand to be dealt… and Tor will be dealing those cards to all the Wild Cards fans out…
+                 https://variety.com/2022/tv/news/game-of-thrones-house-of-the-dragon-premiere-date-1235215983/
+                <a href="https://georgerrmartin.com/notablog/2022/03/30/the-dragons-are-coming-2/">Read more »</a>
+             </p>
+
+             <h3> <a href="#">Random Updates and Bits O' News</a></h3>
+             <p>
+                I look around, and I don’t know where 2021 went.   I blinked and it was gone.   Not a year that
+                I am going to mourn much, any more than 2020.  A global pandemic, so many deaths (including friends of mine,…
+                 https://variety.com/2022/tv/news/game-of-thrones-house-of-the-dragon-premiere-date-1235215983/
+                <a href="https://georgerrmartin.com/notablog/2022/03/30/the-dragons-are-coming-2/">Read more »</a>
+             </p>
+
+             <h3> <a href="#">World of Fire and Blood Calender 2032</a></h3>
+             <p>
+                We have some beautiful art for next years calendar. This time around we’re focusing on a whole
+                World of Ice and Fire theme with amazing new artwork by a collaboration of amazing artists.
+                Check out some of their outstanding work coming…
+                 https://variety.com/2022/tv/news/game-of-thrones-house-of-the-dragon-premiere-date-1235215983/
+                <a href="https://georgerrmartin.com/notablog/2022/03/30/the-dragons-are-coming-2/">Read more »</a>
+             </p>
+
+             <h3> <a href="#">End of an Era</a></h3>
+             <p>
+                Our friend Janis Ian was in Santa Fe last week, at the Jean Cocteau Cinema.   It was the first
+                stop of her new tour.  She did three shows for us (Thursday, Friday, and Saturday nights, all sold out), and on…
+                 https://variety.com/2022/tv/news/game-of-thrones-house-of-the-dragon-premiere-date-1235215983/
+                <a href="https://georgerrmartin.com/notablog/2022/03/30/the-dragons-are-coming-2/">Read more »</a>
+             </p>
+
+             <h3> <a href="#">The Cards Keep Turning</a></h3>
+             <p>
+                Wild Cards fans have a lot to look forward to in the next couple of years, in addition to the Marvel
+                comics series announced below. We have three new books in the pipeline. FULL HOUSE will be a collection of…
+                 https://variety.com/2022/tv/news/game-of-thrones-house-of-the-dragon-premiere-date-1235215983/
+                <a href="https://georgerrmartin.com/notablog/2022/03/30/the-dragons-are-coming-2/">Read more »</a>
+             </p>
+
+
+        </main>
+				<footer>
+            © 2022 GEORGE R.R. MARTIN. ALL RIGHTS RESERVED.
+        </footer>
+				<div id="bottom"></div>
+		</div>
+</body>
+</html>

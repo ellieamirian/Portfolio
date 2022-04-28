@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  background-color: black;
+}
+
+#slideshow {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+#slideshowImage {
+ text-align: center;
+}
+
+#previous, #next {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  cursor: cell;
+  position: absolute;
+  top: 25%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 500px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+#next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+#next:hover {
+  color: rgba(255,54,0,0.2);
+  animation: colorchange 3s linear infinite;
+}
+#previous:hover{
+  color: rgba(195,3,253,0.2);
+  animation: colorchange 3s linear infinite;
+}
+@keyframes colorchange {
+	to {filter: hue-rotate(180deg);}
+}
