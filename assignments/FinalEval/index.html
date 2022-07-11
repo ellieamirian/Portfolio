@@ -6,13 +6,14 @@
     <head>
       <title>Green Foundation</title>
       <style>
+      @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Roboto:ital,wght@0,300;1,300&family=Rubik+Glitch&family=Rubik+Microbe&display=swap');
       * {
         box-sizing: border-box;
       }
 
       body {
-        background-color: paleturquoise;
-        font-family: cursive;
+        background-color: #e5eef6;
+        font-family: roboto light;
         margin: 0;
         color: black;
       }
@@ -32,7 +33,7 @@
 
       /* TODO: need to set grid-area for nav */
       #nav {
-        background-color: darkkhaki;
+        background-color: #8fc5c8;
         display: flex;
         flex-direction: row;
         grid-area: nav;
@@ -53,12 +54,12 @@
 
       .navItem:hover,
       #navCtas a.navCta {
-        background-color: khaki;
-        color: white;
+        background-color: #eceeab;
+        color: black;
       }
 
       .navItem:hover a {
-        color: white;
+        color: black;
       }
 
       .navItem a,
@@ -66,6 +67,7 @@
         display: inline-block;
         padding: 12px;
         text-decoration: none;
+
       }
 
       .navItem a {
@@ -79,6 +81,9 @@
         width: 200px;
         display: none;
 
+      }
+      .navDropdown a:hover {
+        background-color: teal;
       }
 
       /* TODO: need to reveal nav when javascript adds 'navOpen' class */
@@ -102,12 +107,14 @@
       /* TODO: need to set grid-area for header */
       #header {
         /* TODO: fix image source url */
-        background-image: url('https://images.unsplash.com/photo-1589691962030-8d2b7f2a1ffe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+        background-image: url('https://images.unsplash.com/photo-1515096788709-a3cf4ce0a4a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1058&q=80');
         background-size: cover;
         padding: 100px 100px;
         text-align: center;
         grid-area: header;
-        color: darkslategray;
+        color: #2a484c;
+        text-shadow: 2px 1px 3px gray;
+
       }
 
       /* TODO: need to set grid-area for banner1 */
@@ -133,7 +140,7 @@
       #bannerItem1,
       #bannerItem2,
       #bannerItem3 {
-        background: linear-gradient(to bottom, aliceblue, paleturquoise);
+        background: linear-gradient(to bottom, aliceblue, #8fc5c8);
         display: flex;
         flex-direction: column;
         padding: 12px 24px 36px 24px;
@@ -153,7 +160,7 @@
         text-decoration: none;
       }
       .bannerActions a:hover {
-        background-color: khaki;
+        background-color: #eceeab;
       }
 
       a.socialMediaLink {
@@ -198,20 +205,23 @@
       }
 
       #shopGrid .shopItemCard .shopItemImage {
+
         background-color: #BBBBBB;
-        border: 1px solid #999999;
+        border: 0px;
         display: block;
-        height: 100px;
-        width: 100%;
+        height: 150px;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
       }
 
       #shopGrid .shopItemCard .shopItemBadge {
         background-color: #BBBBBB;
-        border-radius: 4px;
         display: inline-block;
         font-size: 12px;
         margin: 12px 0;
         padding: 4px;
+
       }
 
       /* TODO: need to set grid-area for blog */
@@ -269,7 +279,7 @@
 
       /* TODO: need to set grid-area for footer */
       #footer {
-        background: linear-gradient(to bottom, aliceblue, paleturquoise);
+        background: linear-gradient(to bottom, aliceblue, #8fc5c8);
         border-right: 3px solid #666666;
         padding: 48px 24px 24px 24px;
         grid-area: footer;
@@ -300,7 +310,7 @@
 
       /* TODO: need to set grid-area for footerSocial */
       #footerSocialMedia {
-        background: linear-gradient(to bottom, aliceblue, paleturquoise);
+        background: linear-gradient(to bottom, aliceblue, #8fc5c8);
         padding: 24px;
         grid-area: footerSocial;
 
@@ -570,11 +580,21 @@
         <div id="shopGrid">
           <div class="shopItemCard">
             <!-- TODO: fix image src -->
-            <img class="shopItemImage" alt="tshirt1" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80">
+            <img class="shopItemImage" alt="tshirt1" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
             <div class="shopItemBadge">TSHIRT</div>
             <form class="shopItemSelection">
+              <select name="size">
+                <option value="">--size--</option>
+                <option value="1">S</option>
+                <option value="2">M</option>
+                <option value="3">L</option>
+                <!-- TODO: add <option> tags for selectable values (1,2,3,etc.) -->
+              </select>
+              <!-- TODO: change button text to say "Buy" or "Purchase" -->
+            </form>
+            <form class="shopItemSelection">
               <select name="quantity">
-                  <option value="">--select an option--</option>
+                  <option value="">--quantity--</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -589,8 +609,18 @@
             <img class="shopItemImage" alt="tshirt2" src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80">
             <div class="shopItemBadge">TSHIRT</div>
             <form class="shopItemSelection">
+              <select name="size">
+                <option value="">--size--</option>
+                <option value="1">S</option>
+                <option value="2">M</option>
+                <option value="3">L</option>
+                <!-- TODO: add <option> tags for selectable values (1,2,3,etc.) -->
+              </select>
+              <!-- TODO: change button text to say "Buy" or "Purchase" -->
+            </form>
+            <form class="shopItemSelection">
               <select name="quantity">
-                <option value="">--select an option--</option>
+                <option value="">--quantity--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -602,11 +632,21 @@
           </div>
           <div class="shopItemCard">
             <!-- TODO: fix image src -->
-            <img class="shopItemImage" alt="tshirt3" src="https://images.unsplash.com/photo-1593526424177-9c9c7f68d4f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80">
+            <img class="shopItemImage" alt="tshirt3" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8dHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
             <div class="shopItemBadge">TSHIRT</div>
             <form class="shopItemSelection">
+              <select name="size">
+                <option value="">--size--</option>
+                <option value="1">S</option>
+                <option value="2">M</option>
+                <option value="3">L</option>
+                <!-- TODO: add <option> tags for selectable values (1,2,3,etc.) -->
+              </select>
+              <!-- TODO: change button text to say "Buy" or "Purchase" -->
+            </form>
+            <form class="shopItemSelection">
               <select name="quantity">
-                <option value="">--select an option--</option>
+                <option value="">--quantity--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -621,8 +661,18 @@
             <img class="shopItemImage" alt="tshirt4" src="https://images.unsplash.com/photo-1636954935833-80bdb8d2fcb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80">
             <div class="shopItemBadge">TSHIRT</div>
             <form class="shopItemSelection">
+              <select name="size">
+                <option value="">--size--</option>
+                <option value="1">S</option>
+                <option value="2">M</option>
+                <option value="3">L</option>
+                <!-- TODO: add <option> tags for selectable values (1,2,3,etc.) -->
+              </select>
+              <!-- TODO: change button text to say "Buy" or "Purchase" -->
+            </form>
+            <form class="shopItemSelection">
               <select name="quantity">
-                <option value="">--select an option--</option>
+                <option value="">--quantity--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -634,7 +684,7 @@
           </div>
           <div class="shopItemCard">
             <!-- TODO: fix image src -->
-            <img class="shopItemImage" alt="mug1" src="images/mug.jpg">
+            <img class="shopItemImage" alt="mug1" src="https://images.unsplash.com/photo-1542556398-95fb5b9f9b48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bXVnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
             <div class="shopItemBadge">COFFEE MUG</div>
             <form class="shopItemSelection">
               <select name="quantity">
@@ -650,7 +700,7 @@
           </div>
           <div class="shopItemCard">
             <!-- TODO: fix image src -->
-            <img class="shopItemImage" alt="mug2" src="images/mug1.jpg">
+            <img class="shopItemImage" alt="mug2" src="https://images.unsplash.com/photo-1520485521983-bfaa0bc6c80e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bXVnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
             <div class="shopItemBadge">COFFEE MUG</div>
             <form class="shopItemSelection">
               <select name="quantity">
@@ -666,7 +716,7 @@
           </div>
           <div class="shopItemCard">
             <!-- TODO: fix image src -->
-            <img class="shopItemImage" alt="seeds1" src="images/seed.jpg">
+            <img class="shopItemImage" alt="seeds1" src="https://images.unsplash.com/photo-1618158807378-35769f30af82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fHNlZWRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
             <div class="shopItemBadge">SEEDS</div>
             <form class="shopItemSelection">
               <select name="quantity">
@@ -682,11 +732,11 @@
           </div>
           <div class="shopItemCard">
             <!-- TODO: fix image src -->
-            <img class="shopItemImage" alt="seeds2" src="images/seed1.jpg">
+            <img class="shopItemImage" alt="seeds2" src="https://images.unsplash.com/photo-1586094626935-3e53143fc12d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fHNlZWRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=400&q=60">
             <div class="shopItemBadge">SEEDS</div>
             <form class="shopItemSelection">
               <select name="quantity">
-                <option value="">--select an option--</option>
+                <option value="">--quantity--</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
